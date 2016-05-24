@@ -24,10 +24,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n4H-cg-cDc">
                                 <rect key="frame" x="1" y="0.0" width="599" height="53"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-wJ-aNo">
-                                        <rect key="frame" x="0.0" y="5" width="599" height="44"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUa-FU-BMH">
                                         <rect key="frame" x="523" y="8" width="62" height="45"/>
                                         <state key="normal" title="Button" image="383"/>
@@ -35,6 +31,10 @@
                                             <action selector="musicButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="i9C-kA-4zK"/>
                                         </connections>
                                     </button>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search for pokemon" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-wJ-aNo">
+                                        <rect key="frame" x="0.0" y="5" width="599" height="44"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.55539534395973156" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -122,6 +122,7 @@
                     </view>
                     <connections>
                         <outlet property="collection" destination="nEx-6x-PCM" id="n0W-vE-eEh"/>
+                        <outlet property="searchBar" destination="4qi-wJ-aNo" id="1Za-en-mYC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
