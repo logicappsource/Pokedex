@@ -7,12 +7,18 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ViewController: UIViewController,UICollectionViewDelegate,
 UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     @IBOutlet weak var collection: UICollectionView!
+    
+    
+    
+    var pokemon = [Pokemon]()
+    
+    var musicPlayer: AVAudioPlayer!
     
 
     override func viewDidLoad() {
@@ -21,8 +27,49 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         
         collection.delegate = self
         collection.dataSource = self
-        
+        initAudio()
+        parsePokemonCSV()
     }
+    
+    
+    
+    func initAudio() {
+        let path = NSBundle.mainBundle().pathForResource("music", ofType: "mp3")!
+        
+        do {  musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
+            musicPlayer.prepareToPlay()
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.play()
+            
+                
+            }catch  let err as NSError {
+                print(err.debugDescription)
+        }
+    }
+    
+    
+    func parsePokemonCSV() {
+        
+        let path = NSBundle.mainBundle().pathForResource("pokemon", ofType: "csv")!
+        
+        
+        do {
+            let csv = try CSV(contentsOfURL: path)
+            let rows = csv.rows
+            
+            for row in rows {
+                
+              let pokeId = Int(row["id"]!)!
+              let name = row["identifier"]!
+                let poke = Pokemon(name: name, pokedexId: pokeId)
+                pokemon.append(poke)
+                
+            }
+            
+        } catch let err as NSError {
+            print(err.debugDescription)
+        
+        }}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,8 +82,9 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
         //degueu if one avaible in the queue
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PokeCell", forIndexPath: indexPath) as? PokeCell {
             
-            var pokemon = Pokemon(name: "Test", pokedexId: indexPath.row)
-            cell.confiqureCell(pokemon)
+            var poke = pokemon[indexPath.row]
+        
+            cell.confiqureCell(poke)
             return cell
             
         } else {
@@ -65,5 +113,16 @@ UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     }
     
 
+    @IBAction func musicButtonPressed(sender:  UIButton!) {
+        
+        if musicPlayer.playing {
+             musicPlayer.stop()
+             sender.alpha = 0.2
+            
+        } else {
+            musicPlayer.play()
+            sender.alpha = 1.0
+        }
+    }
 }
 

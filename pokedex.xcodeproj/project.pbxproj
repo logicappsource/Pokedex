@@ -16,6 +16,8 @@
 		CD94CDA41CF3BBBC004632AD /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94CDA31CF3BBBC004632AD /* Pokemon.swift */; };
 		CD94CDA61CF3BE30004632AD /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CD94CDA51CF3BE30004632AD /* bg.jpg */; };
 		CD94CDA91CF3C220004632AD /* PokeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94CDA81CF3C220004632AD /* PokeCell.swift */; };
+		CD94CDAB1CF3CA97004632AD /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD94CDAA1CF3CA97004632AD /* csv.swift */; };
+		CD94CDB01CF45073004632AD /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CD94CDAF1CF45073004632AD /* music.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		CD94CDA31CF3BBBC004632AD /* Pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		CD94CDA51CF3BE30004632AD /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		CD94CDA81CF3C220004632AD /* PokeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeCell.swift; sourceTree = "<group>"; };
+		CD94CDAA1CF3CA97004632AD /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = csv.swift; path = ../csv.swift; sourceTree = "<group>"; };
+		CD94CDAF1CF45073004632AD /* music.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +69,7 @@
 				CD94CDA21CF3BBA6004632AD /* Model */,
 				CD94CDA71CF3C1E8004632AD /* View */,
 				CD94C7F21CF3B860004632AD /* AppDelegate.swift */,
-				CD94C7F41CF3B860004632AD /* ViewController.swift */,
 				CD94C7F61CF3B860004632AD /* Main.storyboard */,
-				CD94CDA01CF3B9D6004632AD /* pokemon.csv */,
 				CD94C7F91CF3B860004632AD /* Assets.xcassets */,
 				CD94CDA51CF3BE30004632AD /* bg.jpg */,
 				CD94C7FB1CF3B860004632AD /* LaunchScreen.storyboard */,
@@ -79,7 +81,9 @@
 		CD94CDA21CF3BBA6004632AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CD94CDAD1CF3CABE004632AD /* Controller */,
 				CD94CDA31CF3BBBC004632AD /* Pokemon.swift */,
+				CD94C7F41CF3B860004632AD /* ViewController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -88,8 +92,34 @@
 			isa = PBXGroup;
 			children = (
 				CD94CDA81CF3C220004632AD /* PokeCell.swift */,
+				CD94CDAC1CF3CAB0004632AD /* Util */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CD94CDAC1CF3CAB0004632AD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CD94CDAA1CF3CA97004632AD /* csv.swift */,
+				CD94CDAE1CF3CAD2004632AD /* Resources */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		CD94CDAD1CF3CABE004632AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CD94CDAE1CF3CAD2004632AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CD94CDAF1CF45073004632AD /* music.mp3 */,
+				CD94CDA01CF3B9D6004632AD /* pokemon.csv */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +183,7 @@
 			files = (
 				CD94CDA61CF3BE30004632AD /* bg.jpg in Resources */,
 				CD94C7FD1CF3B860004632AD /* LaunchScreen.storyboard in Resources */,
+				CD94CDB01CF45073004632AD /* music.mp3 in Resources */,
 				CD94C7FA1CF3B860004632AD /* Assets.xcassets in Resources */,
 				CD94CDA11CF3B9D6004632AD /* pokemon.csv in Resources */,
 				CD94C7F81CF3B860004632AD /* Main.storyboard in Resources */,
@@ -170,6 +201,7 @@
 				CD94C7F51CF3B860004632AD /* ViewController.swift in Sources */,
 				CD94C7F31CF3B860004632AD /* AppDelegate.swift in Sources */,
 				CD94CDA41CF3BBBC004632AD /* Pokemon.swift in Sources */,
+				CD94CDAB1CF3CA97004632AD /* csv.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
